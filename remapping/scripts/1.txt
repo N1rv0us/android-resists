@@ -1,0 +1,26 @@
+#### logcat 日志
+09-20 10:12:47.859 12110 12110 E RevenyInjector: Load injector in pid 12110
+09-20 10:12:47.860 12110 12110 E RevenyInjector: Loaded Test
+09-20 10:12:47.861 12110 12321 I RevenyInjector: Still running here
+09-20 10:12:47.861 12110 12110 I RevenyInjector: Line: 747a208000-747a250000 r-xp 00000000 fe:0b 43980                          /data/app/~~1Gp_2yyb8CrTFfV2pzzqNQ==/com.reveny.remap.hide-azVPVCebP8oHVGdo0p1HyQ==/lib/arm64/libRevenyInjector.so
+09-20 10:12:47.861 12110 12110 I RevenyInjector: Line: 747a250000-747a255000 r--p 00047000 fe:0b 43980                          /data/app/~~1Gp_2yyb8CrTFfV2pzzqNQ==/com.reveny.remap.hide-azVPVCebP8oHVGdo0p1HyQ==/lib/arm64/libRevenyInjector.so
+09-20 10:12:47.861 12110 12110 I RevenyInjector: Line: 747a255000-747a256000 rw-p 0004b000 fe:0b 43980                          /data/app/~~1Gp_2yyb8CrTFfV2pzzqNQ==/com.reveny.remap.hide-azVPVCebP8oHVGdo0p1HyQ==/lib/arm64/libRevenyInjector.so
+09-20 10:12:47.864 12110 12110 I RevenyInjector: Allocated at address 0x74d8798000 with size of 294912
+09-20 10:12:47.865 12110 12110 I RevenyInjector: Allocated at address 0x77a5804000 with size of 20480
+09-20 10:12:47.865 12110 12110 I RevenyInjector: Allocated at address 0x77a5808000 with size of 4096
+09-20 10:12:47.866 12110 12110 I RevenyInjector: Line: 74d98de000-74d9926000 r-xp 00000000 fe:0b 43979                          /data/app/~~1Gp_2yyb8CrTFfV2pzzqNQ==/com.reveny.remap.hide-azVPVCebP8oHVGdo0p1HyQ==/lib/arm64/libTest.so
+09-20 10:12:47.866 12110 12110 I RevenyInjector: Line: 74d9926000-74d992b000 r--p 00047000 fe:0b 43979                          /data/app/~~1Gp_2yyb8CrTFfV2pzzqNQ==/com.reveny.remap.hide-azVPVCebP8oHVGdo0p1HyQ==/lib/arm64/libTest.so
+09-20 10:12:47.866 12110 12110 I RevenyInjector: Line: 74d992b000-74d992c000 rw-p 0004b000 fe:0b 43979                          /data/app/~~1Gp_2yyb8CrTFfV2pzzqNQ==/com.reveny.remap.hide-azVPVCebP8oHVGdo0p1HyQ==/lib/arm64/libTest.so
+09-20 10:12:47.868 12110 12110 I RevenyInjector: Allocated at address 0x74d9970000 with size of 294912
+09-20 10:12:47.868 12110 12110 I RevenyInjector: Allocated at address 0x77a5804000 with size of 20480
+09-20 10:12:47.868 12110 12110 I RevenyInjector: Allocated at address 0x77a5808000 with size of 4096
+09-20 10:12:50.861 12110 12321 I RevenyInjector: Still running here
+
+
+
+#### 解析下 /proc/self/maps 返回的数据格式
+747a208000-747a250000 r-xp 00000000 fe:0b 43980                          /data/app/~~1Gp_2yyb8CrTFfV2pzzqNQ==/com.reveny.remap.hide-azVPVCebP8oHVGdo0p1HyQ==/lib/arm64/libRevenyInjector.so
+%lx      |-|%lx     | |%s| |%ld   | |%s | |%ld|                          |%s
+mem.start|-|mem.end |perm| |offset| |dev| |mem.inode|                    |path   
+
+
