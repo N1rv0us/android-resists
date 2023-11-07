@@ -1,0 +1,6 @@
+id=injectsystemcerts
+name=System Certificates Injector for Android 14
+version=v0.0.1
+versionCode=1
+author=N1rv0us 
+description="Importing system certificate for Pixel Android 14. Inspired by httptoolkit"
